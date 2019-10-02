@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="checkInfo()">
+    <h1 id="loginResult"></h1>
+    <script>
+        function checkInfo() {
+            var allInfo = window.location.search.slice(1);
+            var userid = allInfo.split("&")[0].split("=")[1];
+            var password = allInfo.split("&")[1].split("=")[1];
+            if ( userid === "user01" && password === "user01") {
+                document.getElementById("loginResult").innerHTML = "Login Succeed";
+            } else {
+                document.getElementById("loginResult").innerHTML = "Login Failed";
+            }
+            
+        }
+    </script>
+</body>
+</html>
